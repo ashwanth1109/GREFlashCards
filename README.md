@@ -20,10 +20,16 @@ https://www.studystack.com/flashcard-579355
 
 ![Home Page Wireframe](images/wireframes/homePage.png)
 
-![Home Page Wireframe](images/wireframes/homePageDesign.png)
+![Home Page Design](images/wireframes/homePageDesign.png)
 
 ### Login Page
 
 ![Login Page Wireframe](images/wireframes/loginPage.png)
 
-![Login Page Wireframe](images/wireframes/loginPageDesign.png)
+![Login Page Design](images/wireframes/loginPageDesign.png)
+
+### Sign Up Page
+
+![Sign Up Page Wireframe](images/wireframes/signUp.png)
+
+![Sign Up Page Design](images/wireframes/signUpDesign.png)
