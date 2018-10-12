@@ -11,11 +11,8 @@ const db = mongoose.connection;
 //------------------------------------------------------------------------------------
 // SET CONFIGURATION FOR APP PORT & MONGODB URI
 //------------------------------------------------------------------------------------
-const PORT = process.env.PORT || 3000;
-const MONGODB_URI =
-  process.env.MONGODB_URI ||
-  `mongodb://localhost:27017/gre_flash` ||
-  `mongodb://ashwanth:a123456@ds231133.mlab.com:31133/heroku_rkqjw5xq`;
+const PORT = process.env.PORT;
+const MONGODB_URI = process.env.MONGODB_URI;
 
 //------------------------------------------------------------------------------------
 // SET MIDDLEWARE FOR METHOD OVERRIDE AND BODY PARSER
