@@ -11,7 +11,7 @@ const db = mongoose.connection;
 //------------------------------------------------------------------------------------
 // SET CONFIGURATION FOR APP PORT & MONGODB URI
 //------------------------------------------------------------------------------------
-const PORT = 3000 || process.env.PORT;
+const PORT = process.env.PORT || 3000;
 const MONGODB_URI =
   `mongodb://localhost:27017/gre_flash` ||
   `mongodb://heroku_rkqjw5xq:kuqrdkkulvuumuhep87juukp0g@ds231133.mlab.com:31133/heroku_rkqjw5xq` ||
