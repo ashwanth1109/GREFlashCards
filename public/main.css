@@ -109,6 +109,10 @@ a {
   width: 100%;
 }
 
+.fullHeight {
+  height: 100%;
+}
+
 .autoWidth {
   width: auto;
 }
