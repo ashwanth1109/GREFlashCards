@@ -33,3 +33,9 @@ https://www.studystack.com/flashcard-579355
 ![Sign Up Page Wireframe](images/wireframes/signUp.png)
 
 ![Sign Up Page Design](images/wireframes/signUpDesign.png)
+
+### Dashboard Page
+
+![Dashboard Page Wireframe](images/wireframes/dashboard.png)
+
+![Dashboard Page Design](images/wireframes/dashboardDesign.png)
