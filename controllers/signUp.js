@@ -6,7 +6,7 @@ const signUp = express.Router();
 // Get user model
 
 signUp.get("/", (req, res) => {
-  res.send("sign up");
+  res.render("./signUp/index.ejs");
 });
 
 module.exports = signUp;
