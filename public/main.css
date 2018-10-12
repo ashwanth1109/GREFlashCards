@@ -40,6 +40,16 @@ a {
   display: flex;
 }
 
+.flexColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.center {
+  justify-content: center;
+  align-items: center;
+}
+
 .alignCenter {
   align-items: center;
 }
@@ -67,4 +77,26 @@ a {
 .container {
   width: 1200px;
   height: 100%;
+}
+
+/*
+  ====================== HOVER CLASSES ====================== 
+*/
+
+.hoverWhite:hover {
+  color: var(--white);
+}
+
+/*
+  ====================== COMPONENT CLASSES ====================== 
+*/
+
+.infoTitle {
+  width: 100%;
+  height: 400px;
+}
+
+.infoTitle h2 {
+  font-weight: 400;
+  font-size: 3rem;
 }
