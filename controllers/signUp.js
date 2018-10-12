@@ -11,7 +11,7 @@ const db = mongoose.connection;
 // Get user model
 
 signUp.get("/", (req, res) => {
-  res.render("signUp.ejs");
+  res.render("signUp/signUp.ejs");
 });
 
 module.exports = signUp;
