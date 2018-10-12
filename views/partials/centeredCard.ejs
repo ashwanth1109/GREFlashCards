@@ -1,0 +1,11 @@
+<div class="centeredCard flexCenter">
+  <div class="card flexColumn">
+    <div class="featureLine yellow">
+    </div>
+    <% if (page==="signUp") { %>
+      <% include ./signUpForm %>
+        <% } else if (page==="login") { %>
+          <% include ./loginForm %>
+            <% } %>
+  </div>
+</div>

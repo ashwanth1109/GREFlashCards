@@ -1,0 +1,33 @@
+<div class="form">
+  <form action="">
+    <% 
+        let cardTitle = `SIGN UP`;
+        let cardSubtitle = `already have an account?`;
+        let cardTag = `Login here!;`
+    %>
+      <% include ./cardTitle %>
+        <% 
+        let label = `Enter email`;
+        let type = `email`;
+        let name = `email`;
+      %>
+          <% include ./inputField %>
+            <% 
+        label = `Enter password`;
+        type = `password`;
+        name = `password1`;
+      %>
+              <% include ./inputField %>
+                <% 
+        label = `Re-enter password`;
+        type = `password`;
+        name = `password2`;
+      %>
+                  <% include ./inputField %>
+                    <% 
+                      type = `button`; 
+                      value = `Let's get started`;
+                    %>
+                      <% include ./inputField %>
+  </form>
+</div>

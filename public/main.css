@@ -20,6 +20,10 @@
   color: var(--white);
 }
 
+.textBlack {
+  color: var(--black);
+}
+
 .black {
   background-color: var(--black);
 }
@@ -38,6 +42,10 @@
 
 .uppercase {
   text-transform: uppercase;
+}
+
+.underline {
+  text-decoration: underline;
 }
 
 a {
@@ -246,4 +254,60 @@ footer h3 {
   font-size: 2rem;
   border-radius: 10px;
   font-weight: 500;
+}
+
+.centeredCard {
+  width: 100%;
+  height: calc(100vh - 80px);
+}
+
+.card {
+  width: 800px;
+  height: auto;
+  border: 1px solid var(--black);
+  border-top: 1px solid var(--yellow);
+}
+
+.cardTitle {
+  width: 100%;
+  height: 150px;
+}
+
+.cardTitle h2 {
+  font-weight: 500;
+  font-size: 2rem;
+}
+
+.cardTitle h5 {
+  font-weight: 400;
+  font-size: 1.6rem;
+}
+
+.inputField {
+  width: 80%;
+  height: auto;
+  margin: 10px auto 20px auto;
+}
+
+.inputLabel {
+  width: 100%;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.inputBox {
+  width: 100%;
+  font-size: 1.6rem;
+  font-weight: 400;
+  border: 3px solid var(--yellow);
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.inputButton {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 1.6rem;
+  margin-bottom: 30px;
 }

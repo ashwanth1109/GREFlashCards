@@ -1,0 +1,13 @@
+<div class="inputField">
+  <% if (type === `button`) { %>
+    <input type="submit" class="inputButton yellow hoverButton" value="<%=value;%>">
+    <%
+    } else {
+      %>
+      <div class="inputLabel">
+        <%=label;%>
+      </div>
+      <input type="<%=type;%>" name="<%=name;%>" id="<%=name;%>" class="inputBox">
+      <%
+    } %>
+</div>
