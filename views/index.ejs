@@ -8,8 +8,22 @@
 <body>
   <!-- HEADER -->
   <% include ./partials/header %>
-    <!-- INFO TITLE -->
-    <% include ./partials/infoTitle %>
+    <% 
+      let titleBox = 'light'; 
+      let titlePart1 = `Build your vocabulary using GRE Flash's`;
+      let titlePart2 = `Adaptive Learning Methodology`;
+    %>
+      <!-- INFO TITLE -->
+      <% include ./partials/infoTitle %>
+        <!-- MODE OPTIONS -->
+        <% include ./partials/modeOptions %>
+          <%
+          titleBox = 'dark';
+          titlePart1 = `Pomodoro timed practice decks`;
+          titlePart2 = `And 4 modes to choose from`;
+        %>
+            <!-- REUSE TITLE -->
+            <% include ./partials/infoTitle %>
 </body>
 
 </html>

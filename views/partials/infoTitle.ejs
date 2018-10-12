@@ -1,7 +1,19 @@
-<div class="infoTitle flexCenter">
+<div class="infoTitle flexCenter 
+<% 
+  if (titleBox === 'dark') {
+    %>
+    textWhite black
+    <%
+  }
+%>">
   <div class="container flexColumn center">
     <!-- INFO TEXT: build your vocabulary -->
-    <h2>Build your vocabulary using GRE Flash's</h2>
-    <h2>Adaptive Learning Methodology</h2>
+    <h2>
+      <%=titlePart1;%>
+    </h2>
+    <div class="vSpacer"></div>
+    <h2>
+      <%=titlePart2;%>
+    </h2>
   </div>
 </div>
