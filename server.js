@@ -7,6 +7,7 @@ const mongoose = require("mongoose");
 require("dotenv").config();
 const app = express();
 const db = mongoose.connection;
+const session = require("express-session");
 
 //------------------------------------------------------------------------------------
 // SET CONFIGURATION FOR APP PORT & MONGODB URI
@@ -21,6 +22,16 @@ const MONGODB_URI = process.env.MONGODB_URI;
 app.use(methodOverride("_method"));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static("public"));
+//------------------------------------------------------------------------------------
+// SESSION MIDDLEWARE
+//------------------------------------------------------------------------------------
+app.use(
+  session({
+    secret: process.env.SECRET,
+    resave: false,
+    saveUninitialized: false
+  })
+);
 
 //------------------------------------------------------------------------------------
 // SET ROUTES
