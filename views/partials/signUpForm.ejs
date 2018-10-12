@@ -3,7 +3,8 @@
     <% 
         let cardTitle = `SIGN UP`;
         let cardSubtitle = `already have an account?`;
-        let cardTag = `Login here!;`
+        let cardTag = `Login here!`;
+        let link = 'login';
     %>
       <% include ./cardTitle %>
         <% 
@@ -26,8 +27,8 @@
                   <% include ./inputField %>
                     <% 
                       type = `button`; 
-                      value = `Let's get started`;
+                      value = `Sign Up`;
                     %>
-                      <% include ./inputField %>
+                      <% include ./submitButton %>
   </form>
 </div>

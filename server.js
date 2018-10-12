@@ -44,6 +44,12 @@ const signUpController = require("./controllers/signUp.js");
 app.use("/signUp", signUpController);
 
 //------------------------------------------------------------------------------------
+// LOGIN ROUTE CONTROLLER
+//------------------------------------------------------------------------------------
+const loginController = require("./controllers/login.js");
+app.use("/login", loginController);
+
+//------------------------------------------------------------------------------------
 // CONFIGURE DATABASE AND DATABASE CONNECTION
 //------------------------------------------------------------------------------------
 mongoose.connect(

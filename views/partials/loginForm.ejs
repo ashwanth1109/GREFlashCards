@@ -1,0 +1,31 @@
+<div class="form">
+  <form action="">
+    <% 
+      let cardTitle = `LOGIN`;
+      let cardSubtitle = `New to GRE Flash?`;
+      let cardTag = `Sign up here!`;
+      let link = 'signUp';
+  %>
+      <% include ./cardTitle %>
+
+        <% 
+        let label = `Email`;
+        let type = `email`;
+        let name = `email`;
+      %>
+          <% include ./inputField %>
+
+            <% 
+        label = `Password`;
+        type = `password`;
+        name = `password1`;
+      %>
+              <% include ./inputField %>
+                <div class="vSpacerM"></div>
+                <% 
+                      type = `button`; 
+                      value = `Login`;
+                    %>
+                  <% include ./submitButton %>
+  </form>
+</div>
