@@ -1,0 +1,28 @@
+{
+  "name": "GREFlashCards",
+  "version": "1.0.0",
+  "description": "Full Stack CRUD app to add words for improving vocabulary in preparation for the GRE",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashwanth1109/GREFlashCards.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ashwanth1109/GREFlashCards/issues"
+  },
+  "homepage": "https://github.com/ashwanth1109/GREFlashCards#readme",
+  "dependencies": {
+    "dotenv": "^6.1.0",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.3.2"
+  }
+}
