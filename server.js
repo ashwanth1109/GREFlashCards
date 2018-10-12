@@ -12,7 +12,9 @@ const db = mongoose.connection;
 // SET CONFIGURATION FOR APP PORT & MONGODB URI
 //------------------------------------------------------------------------------------
 const PORT = process.env.PORT;
-const MONGODB_URI = process.env.MONGODB_URI;
+const MONGODB_URI =
+  process.env.MONGODB_URI ||
+  `mongodb://heroku_rkqjw5xq:kuqrdkkulvuumuhep87juukp0g@ds231133.mlab.com:31133/heroku_rkqjw5xq`;
 
 //------------------------------------------------------------------------------------
 // SET MIDDLEWARE FOR METHOD OVERRIDE AND BODY PARSER
