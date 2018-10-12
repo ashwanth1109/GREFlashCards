@@ -1,0 +1,70 @@
+:root {
+  --black: #333435;
+  --yellow: #efc143;
+  --white: #fff;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Quicksand", sans-serif;
+}
+
+header {
+  width: 100%;
+  height: 80px;
+  background-color: var(--black);
+}
+
+.textYellow {
+  color: var(--yellow);
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+a {
+  text-decoration: none;
+}
+
+.flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flexRow {
+  display: flex;
+}
+
+.alignCenter {
+  align-items: center;
+}
+
+.justifyBetween {
+  justify-content: space-between;
+}
+
+.autoWidth {
+  width: auto;
+}
+
+.width200 {
+  width: 200;
+}
+
+.hSpacer {
+  width: 50px;
+}
+
+.heightP100 {
+  height: 100%;
+}
+
+.container {
+  width: 1200px;
+  height: 100%;
+}
