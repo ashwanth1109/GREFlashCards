@@ -5,6 +5,7 @@ const express = require("express");
 const signUp = express.Router();
 // Get user model
 const User = require("../models/users");
+const bcrypt = require("bcrypt");
 
 signUp.get("/", (req, res) => {
   res.render("signUp/signUp.ejs", {
@@ -14,7 +15,10 @@ signUp.get("/", (req, res) => {
 
 signUp.post("/", (req, res) => {
   if (req.body.password1 === req.body.password2) {
-    req.body.password = req.body.password1;
+    req.body.password = bcrypt.hashSync(
+      req.body.password1,
+      bcrypt.genSaltSync(10)
+    );
     User.create(req.body, (err, user) => {
       if (err) console.log(err);
       else {
