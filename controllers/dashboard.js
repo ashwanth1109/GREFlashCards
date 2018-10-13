@@ -11,4 +11,12 @@ dashboard.get(`/`, (req, res) => {
   }
 });
 
+dashboard.get("/yourDeck", (req, res) => {
+  if (req.session.user) {
+    res.render("app/yourDeck.ejs");
+  } else {
+    res.redirect("/");
+  }
+});
+
 module.exports = dashboard;
