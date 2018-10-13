@@ -7,7 +7,9 @@ const signUp = express.Router();
 const User = require("../models/users");
 
 signUp.get("/", (req, res) => {
-  res.render("signUp/signUp.ejs");
+  res.render("signUp/signUp.ejs", {
+    user: undefined
+  });
 });
 
 signUp.post("/", (req, res) => {

@@ -167,6 +167,11 @@ a {
   cursor: pointer;
 }
 
+.hoverOption:hover {
+  background-color: var(--yellow);
+  cursor: pointer;
+}
+
 /*
   ====================== COMPONENT CLASSES ====================== 
 */
@@ -314,4 +319,28 @@ footer h3 {
   border-radius: 5px;
   font-size: 1.6rem;
   margin-bottom: 30px;
+}
+
+.deckOrWord {
+  width: 90%;
+}
+
+.deckOrWordTitle {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.deck {
+  width: 100px;
+  height: 30px;
+  border: 3px solid var(--yellow);
+  font-weight: 500;
+}
+
+.word {
+  width: 150px;
+  height: 30px;
+  border: 3px solid var(--yellow);
+  font-weight: 500;
 }

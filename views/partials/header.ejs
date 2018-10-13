@@ -8,11 +8,22 @@
     </h1>
     <div class="autoWidth heightP100">
       <div class="heightP100 flexRow alignCenter justifyBetween">
-        <!-- LOGIN BUTTON -->
-        <a href="/login" class="textYellow hoverWhite">LOGIN</a>
-        <div class="hSpacer"></div>
-        <!-- SIGN UP BUTTON -->
-        <a href="/signUp" class="textYellow hoverWhite">SIGN UP</a>
+        <% if (user===undefined) {
+          %>
+          <!-- LOGIN BUTTON -->
+          <a href="/login" class="textYellow hoverWhite">LOGIN</a>
+          <div class="hSpacer"></div>
+          <!-- SIGN UP BUTTON -->
+          <a href="/signUp" class="textYellow hoverWhite">SIGN UP</a>
+          <%
+        } else {
+          %>
+            <!-- YOUR DECK -->
+            <a href="/login" class="textYellow hoverWhite">YOUR DECK</a>
+            <div class="hSpacer"></div>
+            <!-- LOGOUT -->
+            <a href="/signUp" class="textYellow hoverWhite">LOGOUT</a>
+            <% } %>
       </div>
     </div>
   </div>
