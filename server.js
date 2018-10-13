@@ -57,6 +57,12 @@ const loginController = require("./controllers/login.js");
 app.use("/login", loginController);
 
 //------------------------------------------------------------------------------------
+// DASHBOARD ROUTE CONTROLLER
+//------------------------------------------------------------------------------------
+const dashboardController = require("./controllers/dashboard.js");
+app.use("/dashboard", dashboardController);
+
+//------------------------------------------------------------------------------------
 // CONFIGURE DATABASE AND DATABASE CONNECTION
 //------------------------------------------------------------------------------------
 mongoose.connect(

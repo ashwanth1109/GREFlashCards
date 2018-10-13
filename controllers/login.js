@@ -18,7 +18,7 @@ login.post("/", (req, res) => {
       if (req.body.password === user.password) {
         console.log(`succesfully logged in as ${user}`);
         req.session.user = user;
-        res.redirect("/");
+        res.redirect("/dashboard");
       } else {
         console.log(`login failed: ${user}`);
       }
