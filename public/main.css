@@ -344,3 +344,22 @@ footer h3 {
   border: 3px solid var(--yellow);
   font-weight: 500;
 }
+
+.sessionTracker {
+  width: 100%;
+  height: 300px;
+}
+
+.sessionCircleContainer {
+  width: 250px;
+}
+
+.sessionCircle {
+  width: 150px;
+  height: 150px;
+  border-radius: 75px;
+}
+
+.sessionText {
+  font-size: 1.6rem;
+}
