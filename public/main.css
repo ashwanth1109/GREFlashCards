@@ -120,6 +120,9 @@ a {
 .width200 {
   width: 200;
 }
+.height100 {
+  height: 100px;
+}
 
 .hSpacer {
   width: 100px;
@@ -369,4 +372,24 @@ footer h3 {
   font-size: 1rem;
   border: 0px;
   cursor: pointer;
+}
+
+.level {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.progressBarContainer {
+  width: 40vw;
+  height: 100%;
+}
+
+.infoText {
+  width: 100%;
+  height: 100px;
+}
+
+.infoText p {
+  font-weight: 400;
+  font-size: 1.5rem;
 }
