@@ -363,3 +363,10 @@ footer h3 {
 .sessionText {
   font-size: 1.6rem;
 }
+
+.logout {
+  width: auto;
+  font-size: 1rem;
+  border: 0px;
+  cursor: pointer;
+}

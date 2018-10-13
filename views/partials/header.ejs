@@ -22,7 +22,9 @@
             <a href="/login" class="textYellow hoverWhite">YOUR DECK</a>
             <div class="hSpacer"></div>
             <!-- LOGOUT -->
-            <a href="/signUp" class="textYellow hoverWhite">LOGOUT</a>
+            <form action="/login?_method=DELETE" method="POST">
+              <input type="submit" value="LOGOUT" class="logout black textYellow hoverWhite">
+            </form>
             <% } %>
       </div>
     </div>
