@@ -2,6 +2,9 @@
   "name": "GREFlashCards",
   "version": "1.0.0",
   "description": "Full Stack CRUD app to add words for improving vocabulary in preparation for the GRE",
+  "engines": {
+    "node": "10.11.0"
+  },
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
