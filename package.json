@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/ashwanth1109/GREFlashCards#readme",
   "dependencies": {
-    "bcrypt": "^3.0.1",
+    "bcrypt": "^2.0.1",
     "dotenv": "^6.1.0",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
