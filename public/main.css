@@ -124,6 +124,10 @@ a {
   height: 100px;
 }
 
+.height60 {
+  height: 60px;
+}
+
 .hSpacer {
   width: 100px;
 }
@@ -156,6 +160,10 @@ a {
   height: 100%;
 }
 
+.marginAuto {
+  margin: 0px auto;
+}
+
 /*
   ====================== HOVER CLASSES ====================== 
 */
@@ -173,6 +181,31 @@ a {
 .hoverOption:hover {
   background-color: var(--yellow);
   cursor: pointer;
+}
+
+/*
+  ====================== LAYOUT ====================== 
+*/
+/*
+  JUSTIFY CONTENT
+*/
+.justifyEvenly {
+  justify-content: space-evenly;
+}
+
+/*
+  ====================== HEIGHT & WIDTH ====================== 
+*/
+
+.widthP40 {
+  width: 40%;
+}
+
+/*
+  ====================== FONT ====================== 
+*/
+.fWeight500 {
+  font-weight: 500;
 }
 
 /*

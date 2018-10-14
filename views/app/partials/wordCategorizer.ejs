@@ -1,16 +1,31 @@
-<div class="fullWidth flexCenter">
-  <div class="container flexCenter">
-    <div class="deckOrWord">
-      <div class="deckOrWordTitle">
-        Categorize Word As:
-      </div>
-      <div class="deckOrWordOptions flexRow justifyBetween">
-        <div class="word flexCenter hoverOption">Mastered</div>
-        <div class="word flexCenter hoverOption">Proficient</div>
-        <div class="word flexCenter hoverOption">Familiar</div>
-        <div class="word flexCenter hoverOption">Unfamiliar</div>
-        <div class="word flexCenter hoverOption">Clueless</div>
+<%
+  const category = ['', '', '', '', '']; 
+  switch (deck1[0].familiarity) {
+    case 'Clueless': category[0] = 'yellow';
+    break;
+    case 'Unfamiliar': category[1] = 'yellow';
+    break;
+    case 'Familiar': category[2] = 'yellow';
+    break;
+    case 'Proficient': category[3] = 'yellow';
+    break;
+    case 'Mastered': category[4] = 'yellow';
+    break;
+  }
+%>
+  <div class="fullWidth flexCenter">
+    <div class="container flexCenter">
+      <div class="deckOrWord">
+        <div class="deckOrWordTitle">
+          Categorize Word As:
+        </div>
+        <div class="deckOrWordOptions flexRow justifyBetween">
+          <div class="word flexCenter hoverOption <%=category[4]%>">Mastered</div>
+          <div class="word flexCenter hoverOption <%=category[3]%>">Proficient</div>
+          <div class="word flexCenter hoverOption <%=category[2]%>">Familiar</div>
+          <div class="word flexCenter hoverOption <%=category[1]%>">Unfamiliar</div>
+          <div class="word flexCenter hoverOption <%=category[0]%>">Clueless</div>
+        </div>
       </div>
     </div>
   </div>
-</div>

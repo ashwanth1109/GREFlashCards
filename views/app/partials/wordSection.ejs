@@ -2,12 +2,28 @@
   <div class="container flexRow">
     <!-- FLASH CARD -->
     <div class="flex1 black flexColumn justifyBetween padding">
-      <div class="justifyStart textYellow fullWidth dflex">word 1 of 51</div>
-      <div class="justifyCenter textWhite fullWidth  dflex fontSize2">Abashed</div>
+      <div class="justifyStart textYellow fullWidth dflex">word
+        <%=deck1[0].id;%> of
+          <%=deck1.length;%>
+      </div>
+      <div class="justifyCenter textWhite fullWidth  dflex fontSize2">
+        <%=deck1[0].name;%>
+      </div>
       <div class="justifyEnd textYellow dflex">click to flip card</div>
     </div>
     <div class="flex1 flexCenter">
-      <div class="widthP80 heightP100 flexColumn justifyAround">
+      <div class="widthP80 heightP100 flexColumn justifyEvenly">
+        <div class="widthP80 height60 yellow hoverButton flexCenter fWeight500">
+          ADD WORD TO YOUR DECK
+        </div>
+        <div class="widthP80 height60 flexRow justifyBetween">
+          <div class="widthP40 fullHeight yellow hoverButton flexCenter fWeight500">
+            PREVIOUS
+          </div>
+          <div class="widthP40 fullHeight yellow hoverButton flexCenter fWeight500">
+            NEXT
+          </div>
+        </div>
       </div>
     </div>
   </div>
