@@ -1,0 +1,30 @@
+<div class="form container marginAuto">
+  <form action="/deck" method="POST" id="createForm">
+    <div class="vSpacerM"></div>
+    <% 
+          let label = `Word`;
+          let type = `text`;
+          let name = `name`;
+        %>
+      <% include ../../partials/inputField %>
+
+        <% 
+          label = `Definition`;
+          name = `definition`;
+        %>
+          <% include ./textAreaField %>
+            <% 
+      label = `Your Notes`;
+      name = `notes`;
+    %>
+              <% include ./textAreaField %>
+                <% include ./difficultyCategorizer %>
+                  <% 
+            type = `button`; 
+            value = `Add Word`;
+            %>
+                    <input type="text" name='difficulty' id='wordDifficulty' class="displayNone" />
+                    <div class="vSpacerM"></div>
+                    <% include ../../partials/submitButton %>
+  </form>
+</div>

@@ -19,7 +19,6 @@ login.post("/", (req, res) => {
       console.log(err);
     } else {
       if (bcrypt.compareSync(req.body.password, user.password)) {
-        console.log(`succesfully logged in as ${user}`);
         req.session.user = user;
         res.redirect("/dashboard");
       } else {

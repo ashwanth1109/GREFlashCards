@@ -65,6 +65,12 @@ const dashboardController = require("./controllers/dashboard.js");
 app.use("/dashboard", dashboardController);
 
 //------------------------------------------------------------------------------------
+// DECK ROUTE CONTROLLER
+//------------------------------------------------------------------------------------
+const deckController = require("./controllers/deck.js");
+app.use("/deck", deckController);
+
+//------------------------------------------------------------------------------------
 // CONFIGURE DATABASE AND DATABASE CONNECTION
 //------------------------------------------------------------------------------------
 mongoose.connect(

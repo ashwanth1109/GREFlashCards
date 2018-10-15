@@ -184,6 +184,13 @@ a {
 }
 
 /*
+  DISPLAY
+*/
+.displayNone {
+  display: none;
+}
+
+/*
   ====================== LAYOUT ====================== 
 */
 /*
@@ -206,6 +213,10 @@ a {
 */
 .fWeight500 {
   font-weight: 500;
+}
+
+.fSize2 {
+  font-size: 2rem;
 }
 
 /*
@@ -425,4 +436,15 @@ footer h3 {
 .infoText p {
   font-weight: 400;
   font-size: 1.5rem;
+}
+
+.textArea {
+  resize: none;
+  height: 150px;
+  width: 100%;
+  padding: 10px;
+  font-size: 1.6rem;
+  font-weight: 400;
+  border: 3px solid var(--yellow);
+  border-radius: 5px;
 }
