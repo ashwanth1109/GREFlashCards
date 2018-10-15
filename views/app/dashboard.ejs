@@ -7,21 +7,26 @@
 
 <body>
   <% include ../partials/header %>
-    <div class="fullWidth vSpacerM"></div>
-    <div class="fullWidth vSpacerM"></div>
-    <% include ./partials/wordCategorizer %>
+    <% if (word === undefined) {
+    var word = {};
+    word.name = 'You are yet to add a word';
+    var id = -1;
+  } %>
       <div class="fullWidth vSpacerM"></div>
-      <% include ./partials/wordSection %>
+      <div class="fullWidth vSpacerM"></div>
+      <% include ./partials/wordCategorizer %>
         <div class="fullWidth vSpacerM"></div>
-        <% include ./partials/modeOptions %>
-          <% include ./partials/sessionTracker %>
-            <% include ./partials/startSession %>
-              <div class="fullWidth vSpacerM"></div>
-              <% include ./partials/progressTracker %>
+        <% include ./partials/wordSection %>
+          <div class="fullWidth vSpacerM"></div>
+          <% include ./partials/modeOptions %>
+            <% include ./partials/sessionTracker %>
+              <% include ./partials/startSession %>
                 <div class="fullWidth vSpacerM"></div>
-                <% include ./partials/infoText %>
+                <% include ./partials/progressTracker %>
                   <div class="fullWidth vSpacerM"></div>
-                  <% include ../partials/footer %>
+                  <% include ./partials/infoText %>
+                    <div class="fullWidth vSpacerM"></div>
+                    <% include ../partials/footer %>
 </body>
 
 </html>
