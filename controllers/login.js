@@ -13,24 +13,52 @@ login.get("/", (req, res) => {
   });
 });
 
+login.get("/userNameOrPasswordIncorrect", (req, res) => {
+  res.render("login/login.ejs", {
+    user: undefined
+  });
+});
+
 login.post("/", (req, res) => {
   User.findOne({ email: req.body.email }, (err, user) => {
     if (err) {
-      res.send(err);
+      res.redirect("/");
     } else {
-      if (bcrypt.compareSync(req.body.password, user.password)) {
-        console.log("User has logged in");
-        req.session.user = user;
-        if (user.easyWords.length > 0) {
-          res.redirect(`/dashboard/easy/0`);
-        } else {
-          res.redirect("/dashboard/easy");
-        }
+      // console.log("user password" + user.password);
+      if (user === null) {
+        res.redirect("/login/userNameOrPasswordIncorrect");
       } else {
-        res.send(`password incorrect: ${user}`);
+        if (bcrypt.compareSync(req.body.password, user.password)) {
+          console.log(`User has logged in`);
+          req.session.user = user;
+          if (user.easyWords.length > 0) {
+            res.redirect("/dashboard/easy/0");
+          } else {
+            res.redirect("/");
+          }
+        } else {
+          res.redirect("/login/userNameOrPasswordIncorrect");
+        }
       }
+      // if (
+      //   user.password &&
+      //   bcrypt.compareSync(req.body.password, user.password)
+      // ) {
+      //   console.log("User has logged in");
+      //   req.session.user = user;
+      //   if (user.easyWords.length > 0) {
+      //     res.redirect(`/dashboard/easy/0`);
+      //   } else {
+      //     res.redirect("/dashboard/easy");
+      //   }
+      // } else {
+      //   res.redirect("/login/passwordIncorrect");
+      // }
+
+      // res.send("finding a user");
     }
   });
+  // res.redirect("/");
 });
 
 login.delete("/", (req, res) => {
