@@ -8,13 +8,13 @@ dashboard.get("/easy/:id", (req, res) => {
   const { id } = req.params;
   const { user } = req.session;
   if (req.session.user) {
-    // res.render("dashboard.ejs", {
-    //   user: user,
-    //   id: id,
-    //   words: user.easyWords,
-    //   word: user.easyWords[id]
-    // });
-    res.send("hello");
+    res.render("app.ejs", {
+      user: user,
+      id: id,
+      words: user.easyWords,
+      word: user.easyWords[id]
+    });
+    // res.send("hello");
   } else {
     res.redirect("/");
   }
