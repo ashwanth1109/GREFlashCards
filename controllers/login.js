@@ -20,7 +20,7 @@ login.post("/", (req, res) => {
     } else {
       if (bcrypt.compareSync(req.body.password, user.password)) {
         req.session.user = user;
-        res.redirect("/dashboard");
+        res.redirect("/dashboard/easy/0");
       } else {
         console.log(`login failed: ${user}`);
       }

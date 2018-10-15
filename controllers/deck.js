@@ -79,7 +79,7 @@ deck.post("/", (req, res) => {
             res.send(err);
           } else {
             console.log(updatedUser);
-            res.redirect("/dashboard");
+            res.redirect("/dashboard/easy/0");
           }
         }
       );

@@ -2,6 +2,7 @@
   --black: #333435;
   --yellow: #efc143;
   --white: #fff;
+  --grey: #cccccc;
 }
 
 @import url("https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700");
@@ -34,6 +35,10 @@
 
 .white {
   background-color: var(--white);
+}
+
+.grey {
+  background-color: var(--grey);
 }
 
 .flex1 {

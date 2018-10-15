@@ -9,22 +9,19 @@
   <% include ../partials/header %>
     <div class="fullWidth vSpacerM"></div>
     <div class="fullWidth vSpacerM"></div>
-    <% let word = deck1[0]%>
-      <% include ./partials/standardDecks %>
+    <% include ./partials/wordCategorizer %>
+      <div class="fullWidth vSpacerM"></div>
+      <% include ./partials/wordSection %>
         <div class="fullWidth vSpacerM"></div>
-        <% include ./partials/wordCategorizer %>
-          <div class="fullWidth vSpacerM"></div>
-          <% include ./partials/wordSection %>
-            <div class="fullWidth vSpacerM"></div>
-            <% include ./partials/modeOptions %>
-              <% include ./partials/sessionTracker %>
-                <% include ./partials/startSession %>
+        <% include ./partials/modeOptions %>
+          <% include ./partials/sessionTracker %>
+            <% include ./partials/startSession %>
+              <div class="fullWidth vSpacerM"></div>
+              <% include ./partials/progressTracker %>
+                <div class="fullWidth vSpacerM"></div>
+                <% include ./partials/infoText %>
                   <div class="fullWidth vSpacerM"></div>
-                  <% include ./partials/progressTracker %>
-                    <div class="fullWidth vSpacerM"></div>
-                    <% include ./partials/infoText %>
-                      <div class="fullWidth vSpacerM"></div>
-                      <% include ../partials/footer %>
+                  <% include ../partials/footer %>
 </body>
 
 </html>
