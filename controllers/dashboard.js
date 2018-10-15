@@ -8,7 +8,7 @@ dashboard.get("/easy/:id", (req, res) => {
   const { id } = req.params;
   const { user } = req.session;
   if (req.session.user) {
-    res.render("./app/dashboard.ejs", {
+    res.render("dashboard.ejs", {
       user: user,
       id: id,
       words: user.easyWords,
