@@ -21,7 +21,11 @@ login.post("/", (req, res) => {
       if (bcrypt.compareSync(req.body.password, user.password)) {
         console.log("User has logged in");
         req.session.user = user;
-        res.redirect("/dashboard/easy");
+        if (user.easyWords.length > 0) {
+          res.redirect(`/dashboard/easy/0`);
+        } else {
+          res.redirect("/dashboard/easy");
+        }
       } else {
         res.send(`password incorrect: ${user}`);
       }

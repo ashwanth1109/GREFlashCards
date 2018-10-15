@@ -62,7 +62,9 @@ deck.post("/", (req, res) => {
     default:
       difficulty = 3;
   }
-
+  const homeWordId = req.session.user.easyWords[0];
+  console.log(`home word id is:`);
+  console.log(homeWordId);
   // body.userId = _id;
   console.log(`The word looks like this`);
   console.log(body);
@@ -90,7 +92,7 @@ deck.post("/", (req, res) => {
             res.send(err);
           } else {
             console.log(updatedUser);
-            res.redirect("/dashboard/easy");
+            res.redirect(`/dashboard/easy/0`);
           }
         }
       );

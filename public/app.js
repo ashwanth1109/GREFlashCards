@@ -28,6 +28,7 @@ $(() => {
 
   const currentURL = $(location).attr("href");
   const urlStringArray = currentURL.split("/");
+
   const nextId = Number(urlStringArray[urlStringArray.length - 1]) + 1;
   const previousId = Number(urlStringArray[urlStringArray.length - 1]) - 1;
   urlStringArray[urlStringArray.length - 1] = (
