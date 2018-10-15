@@ -7,11 +7,11 @@
 
 <body>
   <% include ../partials/header %>
-    <% if (word === undefined) {
-    var word = {};
-    word.name = 'You are yet to add a word';
-    var id = -1;
-  } %>
+    <% 
+    word = word || {};
+    word.name = word.name || 'You are yet to add a word';
+    id = id || -1;
+  %>
       <div class="fullWidth vSpacerM"></div>
       <div class="fullWidth vSpacerM"></div>
       <% include ./partials/wordCategorizer %>

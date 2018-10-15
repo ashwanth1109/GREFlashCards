@@ -1,15 +1,22 @@
 <div class="featuresSection flexCenter">
   <div class="container flexRow">
     <!-- FLASH CARD -->
-    <div class="flex1 black flexColumn justifyBetween padding">
-      <div class="justifyStart textYellow fullWidth dflex" id="wordPosition" currentWord="<%=id;%>" totalWords="<%=words.length;%>">word
-        <%=Number(id)+1;%> of
-          <%=words.length;%>
+    <div class="flex1 card">
+      <div class="front fullHeight flexColumn justifyBetween black padding borderBox">
+        <div class="justifyStart textYellow fullWidth dflex" id="wordPosition" currentWord="<%=id;%>" totalWords="<%=words.length;%>">word
+          <%=Number(id)+1;%> of
+            <%=words.length;%>
+        </div>
+        <div class="justifyCenter textWhite fullWidth  dflex fontSize2">
+          <%=word.name;%>
+        </div>
+        <div class="justifyEnd textYellow dflex">click to flip card</div>
       </div>
-      <div class="justifyCenter textWhite fullWidth  dflex fontSize2">
-        <%=word.name;%>
+      <div class="back flex1 flexCenter black">
+        <div class="textWhite flex1 fontSize2 textAlignCenter">
+          <%=word.definition;%>
+        </div>
       </div>
-      <div class="justifyEnd textYellow dflex">click to flip card</div>
     </div>
     <div class="flex1 flexCenter">
       <div class="widthP80 heightP100 flexColumn justifyEvenly">
@@ -23,6 +30,9 @@
           <div class="widthP40 fullHeight yellow hoverButton flexCenter fWeight500 next">
             NEXT
           </div>
+        </div>
+        <div class="widthP80 height60 yellow hoverButton flexCenter fWeight500" id="deleteWord">
+          DELETE THIS WORD
         </div>
       </div>
     </div>

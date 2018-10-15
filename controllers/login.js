@@ -4,7 +4,7 @@
 const express = require("express");
 const login = express.Router();
 // Get user model
-const User = require("../models/users");
+const { User } = require("../models/users");
 const bcrypt = require("bcrypt");
 
 login.get("/", (req, res) => {
@@ -19,8 +19,9 @@ login.post("/", (req, res) => {
       console.log(err);
     } else {
       if (bcrypt.compareSync(req.body.password, user.password)) {
+        console.log("User has logged in");
         req.session.user = user;
-        res.redirect("/dashboard/easy/0");
+        res.redirect("/dashboard/easy");
       } else {
         console.log(`login failed: ${user}`);
       }

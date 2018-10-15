@@ -205,6 +205,10 @@ a {
   justify-content: space-evenly;
 }
 
+.borderBox {
+  box-sizing: border-box;
+}
+
 /*
   ====================== HEIGHT & WIDTH ====================== 
 */
@@ -222,6 +226,10 @@ a {
 
 .fSize2 {
   font-size: 2rem;
+}
+
+.textAlignCenter {
+  text-align: center;
 }
 
 /*

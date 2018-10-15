@@ -3,6 +3,8 @@ $(() => {
 
   let difficulty = "";
 
+  $(".card").flip({ axis: "x" });
+
   $(`.difficulty`).on("click", e => {
     if ($(e.target).hasClass("yellow")) {
       $(e.target).removeClass("yellow");
