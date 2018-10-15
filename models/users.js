@@ -5,7 +5,6 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const userSchema = Schema({
-  _id: Schema.Types.ObjectId,
   email: { type: String, required: true },
   password: { type: String, required: true },
   easyWords: [{ type: Schema.Types.ObjectId, ref: "Word" }],

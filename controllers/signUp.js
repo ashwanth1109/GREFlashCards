@@ -4,7 +4,7 @@
 const express = require("express");
 const signUp = express.Router();
 // Get user model
-const User = require("../models/users");
+const { User } = require("../models/users");
 const bcrypt = require("bcrypt");
 
 signUp.get("/", (req, res) => {
