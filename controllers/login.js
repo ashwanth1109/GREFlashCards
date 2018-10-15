@@ -16,14 +16,14 @@ login.get("/", (req, res) => {
 login.post("/", (req, res) => {
   User.findOne({ email: req.body.email }, (err, user) => {
     if (err) {
-      console.log(err);
+      res.send(err);
     } else {
       if (bcrypt.compareSync(req.body.password, user.password)) {
         console.log("User has logged in");
         req.session.user = user;
         res.redirect("/dashboard/easy");
       } else {
-        console.log(`login failed: ${user}`);
+        res.send(`password incorrect: ${user}`);
       }
     }
   });
