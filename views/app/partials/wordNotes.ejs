@@ -1,0 +1,33 @@
+<div class="widthP100 flexColumn alignCenter">
+  <% let buttonText="Edit Word" %>
+    <div class="bigButton flexCenter">
+      <div class="container flexCenter">
+        <% if (id === -1) {
+          %>
+          <a href="/deck/new" class="fullHeight textWhite">
+            <div class="button black flexCenter hoverOption">
+              <%=buttonText;%>
+            </div>
+          </a>
+          <%
+        } else {
+          %>
+            <a href="/dashboard/<%=id;%>/edit" class="fullHeight textWhite">
+              <div class="button black flexCenter hoverOption">
+                <%=buttonText;%>
+              </div>
+            </a>
+            <%
+        }%>
+      </div>
+    </div>
+    <div class="container">
+      <div class="fSize15">
+        Your Notes:
+      </div>
+    </div>
+    <div class="fullWidth height20"></div>
+    <div class="container">
+      <%=word.notes;%>
+    </div>
+</div>

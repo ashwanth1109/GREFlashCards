@@ -57,102 +57,6 @@ a {
   text-decoration: none;
 }
 
-.flexCenter {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.flexRow {
-  display: flex;
-}
-
-.flexColumn {
-  display: flex;
-  flex-direction: column;
-}
-
-.center {
-  justify-content: center;
-  align-items: center;
-}
-
-.alignCenter {
-  align-items: center;
-}
-
-.justifyBetween {
-  justify-content: space-between;
-}
-
-.justifyAround {
-  justify-content: space-around;
-}
-
-.justifyStart {
-  justify-content: flex-start;
-}
-
-.justifyEnd {
-  justify-content: flex-end;
-}
-
-.justifyCenter {
-  justify-content: center;
-}
-
-.dflex {
-  display: flex;
-}
-
-.fullSize {
-  width: 100%;
-  height: 100%;
-}
-
-.fullWidth {
-  width: 100%;
-}
-
-.fullHeight {
-  height: 100%;
-}
-
-.autoWidth {
-  width: auto;
-}
-
-.width200 {
-  width: 200;
-}
-.height100 {
-  height: 100px;
-}
-
-.height60 {
-  height: 60px;
-}
-
-.hSpacer {
-  width: 100px;
-}
-
-.vSpacerL {
-  height: 100px;
-}
-
-.vSpacerM {
-  height: 60px;
-}
-
-.heightP100 {
-  height: 100%;
-}
-
-.widthP80 {
-  width: 80%;
-}
-
 .padding {
   padding: 20px;
 }
@@ -209,12 +113,116 @@ a {
   box-sizing: border-box;
 }
 
+.flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flexRow {
+  display: flex;
+}
+
+.flexColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.center {
+  justify-content: center;
+  align-items: center;
+}
+
+.alignCenter {
+  align-items: center;
+}
+
+.justifyBetween {
+  justify-content: space-between;
+}
+
+.justifyAround {
+  justify-content: space-around;
+}
+
+.justifyStart {
+  justify-content: flex-start;
+}
+
+.justifyEnd {
+  justify-content: flex-end;
+}
+
+.justifyCenter {
+  justify-content: center;
+}
+
+.dflex {
+  display: flex;
+}
+
 /*
   ====================== HEIGHT & WIDTH ====================== 
 */
 
+.widthP100 {
+  width: 100%;
+}
+
 .widthP40 {
   width: 40%;
+}
+
+.fullSize {
+  width: 100%;
+  height: 100%;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.fullHeight {
+  height: 100%;
+}
+
+.autoWidth {
+  width: auto;
+}
+
+.width200 {
+  width: 200;
+}
+.height100 {
+  height: 100px;
+}
+
+.height60 {
+  height: 60px;
+}
+
+.height20 {
+  height: 20px;
+}
+
+.hSpacer {
+  width: 100px;
+}
+
+.vSpacerL {
+  height: 100px;
+}
+
+.vSpacerM {
+  height: 60px;
+}
+
+.heightP100 {
+  height: 100%;
+}
+
+.widthP80 {
+  width: 80%;
 }
 
 /*
@@ -226,6 +234,11 @@ a {
 
 .fSize1 {
   font-size: 1rem;
+}
+
+.fSize15 {
+  font-size: 1.5rem;
+  font-weight: 500;
 }
 
 .fSize2 {

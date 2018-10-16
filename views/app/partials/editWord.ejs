@@ -1,0 +1,45 @@
+<div class="form container marginAuto">
+  <form action="/dashboard/<%=id;%>?_method=PUT" method="POST" id="createForm">
+    <div class="vSpacerM"></div>
+    <% 
+            let label = `Word`;
+            let type = `text`;
+            let name = `name`;
+          %>
+      <div class="inputField">
+        <div class="inputLabel">
+          <%=label;%>
+        </div>
+        <input type="<%=type;%>" name="<%=name;%>" id="<%=name;%>" class="inputBox" value="<%=word.name;%>">
+      </div>
+
+      <% 
+            label = `Definition`;
+            name = `definition`;
+          %>
+        <div class="inputField">
+          <div class="inputLabel">
+            <%=label;%>
+          </div>
+          <textarea name="<%=name;%>" class="textArea"><%=word.definition;%></textarea>
+        </div>
+        <% 
+        label = `Your Notes`;
+        name = `notes`;
+      %>
+          <div class="inputField">
+            <div class="inputLabel">
+              <%=label;%>
+            </div>
+            <textarea name="<%=name;%>" class="textArea"><%=word.notes;%></textarea>
+          </div>
+          <% include ./difficultyCategorizer %>
+            <% 
+              type = `button`; 
+              value = `Edit Word`;
+              %>
+              <input type="text" name='difficulty' id='wordDifficulty' class="displayNone" />
+              <div class="vSpacerM"></div>
+              <% include ../../partials/submitButton %>
+  </form>
+</div>
