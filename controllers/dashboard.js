@@ -62,6 +62,7 @@ dashboard.get("/easy/:id", (req, res) => {
 dashboard.delete("/easy/:id", (req, res) => {
   const { id } = req.params;
   const { user } = req.session;
+  console.log("entering delete route");
   if (req.session.user) {
     User.findById({ _id: user._id }, (err, user) => {
       Word.findOneAndRemove({ _id: user.easyWords[id] }, (err, word) => {
@@ -77,8 +78,14 @@ dashboard.delete("/easy/:id", (req, res) => {
               if (err) {
                 res.send(err);
               } else {
-                console.log(req.session.user);
-                res.redirect("/dashboard/easy/0");
+                console.log(id);
+                if (user.easyWords.length < 1) {
+                  console.log(`redirecting to dashboard`);
+                  res.redirect("/dashboard");
+                } else {
+                  console.log("redirecting to 1st element");
+                  res.redirect("/dashboard/easy/0");
+                }
               }
             }
           );
