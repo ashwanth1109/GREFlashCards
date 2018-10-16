@@ -34,7 +34,7 @@ login.post("/", (req, res) => {
           if (user.easyWords.length > 0) {
             res.redirect("/dashboard/easy/0");
           } else {
-            res.redirect("/");
+            res.redirect("/dashboard");
           }
         } else {
           res.redirect("/login/userNameOrPasswordIncorrect");

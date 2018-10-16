@@ -224,6 +224,10 @@ a {
   font-weight: 500;
 }
 
+.fSize1 {
+  font-size: 1rem;
+}
+
 .fSize2 {
   font-size: 2rem;
 }

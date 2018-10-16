@@ -8,6 +8,7 @@ require("dotenv").config();
 const app = express();
 const db = mongoose.connection;
 const session = require("express-session");
+const morgan = require("morgan");
 
 //------------------------------------------------------------------------------------
 // SET CONFIGURATION FOR APP PORT & MONGODB URI
@@ -22,6 +23,7 @@ const MONGODB_URI = process.env.MONGODB_URI;
 app.use(methodOverride("_method"));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static("public"));
+app.use(morgan("combined"));
 //------------------------------------------------------------------------------------
 // SESSION MIDDLEWARE
 //------------------------------------------------------------------------------------

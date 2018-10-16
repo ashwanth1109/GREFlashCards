@@ -64,5 +64,19 @@ $(() => {
   console.log($("#wordPosition").attr("currentWord"));
   console.log($("#wordPosition").attr("totalWords"));
 
+  $(".disabled")
+    .removeClass("yellow hoverButton")
+    .addClass("grey")
+    .off("click");
+
+  const disabledButtons = $(".disabled");
+  for (const disabledButton of disabledButtons) {
+    if ($(disabledButton).hasClass("delete")) {
+      console.log(`detecting disabled delete button`);
+      console.log($(".delete"));
+      $(".delete").attr("disabled", "disabled");
+    }
+  }
+
   // if (nextId > )
 });
