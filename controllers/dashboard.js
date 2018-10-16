@@ -117,14 +117,14 @@ dashboard.get("/:id/edit", (req, res) => {
       if (err) {
         res.send(err);
       } else {
-        Word.findById({ _id: req.session.user.easyWords[id] }, (err, word) => {
+        Word.findById({ _id: user.easyWords[id] }, (err, word) => {
           if (err) {
             res.send(err);
           } else {
             console.log(`printing word in edit route`);
             console.log(word);
             res.render("app/edit.ejs", {
-              user: req.session.user,
+              user: user,
               word: word,
               id: id
             });
