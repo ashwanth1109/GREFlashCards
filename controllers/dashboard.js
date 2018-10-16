@@ -111,17 +111,24 @@ dashboard.delete("/easy/:id", (req, res) => {
 //------------------------------------------------------------------------------------
 dashboard.get("/:id/edit", (req, res) => {
   const { id } = req.params;
-  if (req.session.user) {
-    Word.findById({ _id: req.session.user.easyWords[id] }, (err, word) => {
+  const { user } = req.session;
+  if (user) {
+    User.findById({ _id: user.id }, (err, user) => {
       if (err) {
         res.send(err);
       } else {
-        console.log(`printing word in edit route`);
-        console.log(word);
-        res.render("app/edit.ejs", {
-          user: req.session.user,
-          word: word,
-          id: id
+        Word.findById({ _id: req.session.user.easyWords[id] }, (err, word) => {
+          if (err) {
+            res.send(err);
+          } else {
+            console.log(`printing word in edit route`);
+            console.log(word);
+            res.render("app/edit.ejs", {
+              user: req.session.user,
+              word: word,
+              id: id
+            });
+          }
         });
       }
     });
