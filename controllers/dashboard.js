@@ -155,16 +155,27 @@ dashboard.put("/:id", (req, res) => {
   }
 
   console.log(body);
+
   if (user) {
     User.findById({ _id: user._id }, (err, user) => {
       if (err) {
         res.send(`Error: ${err}`);
       } else {
-        console.log("in update route finding word");
-        console.log(user.easyWords[id]);
+        const word = {
+          _id: user.easyWords[id],
+          userId: user._id,
+          name: body.name,
+          definition: body.definition,
+          notes: body.notes,
+          difficulty: body.difficulty
+        };
+        console.log(`word is `);
+        console.log(word);
+        // console.log("in update route finding word");
+        // console.log(user.easyWords[id]);
         Word.findByIdAndUpdate(
           { _id: user.easyWords[id] },
-          body,
+          word,
           (err, updatedWord) => {
             if (err) {
               res.send(`Error ${err}`);
