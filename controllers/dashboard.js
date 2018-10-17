@@ -110,11 +110,13 @@ dashboard.delete("/easy/:id", (req, res) => {
 // EDIT ROUTE
 //------------------------------------------------------------------------------------
 dashboard.get("/:id/edit", (req, res) => {
+  console.log("edit route reached");
   const { id } = req.params;
   const { user } = req.session;
   if (user) {
-    User.findById({ _id: user.id }, (err, user) => {
+    User.findById({ _id: user._id }, (err, user) => {
       if (err) {
+        console.log(`entering error in user`);
         res.send(err);
       } else {
         Word.findById({ _id: user.easyWords[id] }, (err, word) => {
