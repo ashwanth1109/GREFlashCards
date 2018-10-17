@@ -29,41 +29,50 @@ dashboard.get("/", (req, res) => {
 //------------------------------------------------------------------------------------
 dashboard.get("/easy/:id", (req, res) => {
   // console.log(`entering dashboard 0 element get req`);
-  const { user } = req.session;
   const { id } = req.params;
   // console.log(`logging user`);
   // console.log(user);
+  const { user } = req.session;
 
-  User.findById({ _id: user._id }, (err, user) => {
-    if (req.session.user) {
-      Word.findById({ _id: user.easyWords[id] }, (err, word) => {
-        // console.log(`logging word`);
-        // console.log(word);
+  if (user) {
+    User.findById({ _id: user._id }, (err, user) => {
+      Word.find({ _id: { $in: user.easyWords } }, (err, words) => {
         if (err) {
-          // console.log("error");
           res.send(err);
         } else {
-          res.render("app/dashboard.ejs", {
-            user: user,
-            id: id,
-            words: user.easyWords,
-            word: word,
-            home: false
+          console.log(`========================================`);
+          console.log(words);
+          console.log(`========================================`);
+          Word.findById({ _id: user.easyWords[id] }, (err, word) => {
+            // console.log(`logging word`);
+            // console.log(word);
+            if (err) {
+              // console.log("error");
+              res.send(err);
+            } else {
+              res.render("app/dashboard.ejs", {
+                user: user,
+                id: id,
+                words: words,
+                word: word,
+                home: false
+              });
+            }
           });
+          // User;
+          // res.render("app/dashboard.ejs", {
+          //   user: user,
+          //   id: id,
+          //   words: user.easyWords,
+          //   word: user.easyWords[id]
+          // });
+          // // res.send("hello");
         }
       });
-      // User;
-      // res.render("app/dashboard.ejs", {
-      //   user: user,
-      //   id: id,
-      //   words: user.easyWords,
-      //   word: user.easyWords[id]
-      // });
-      // // res.send("hello");
-    } else {
-      res.redirect("/");
-    }
-  });
+    });
+  } else {
+    res.redirect("/");
+  }
 });
 
 //------------------------------------------------------------------------------------

@@ -1,16 +1,33 @@
-<div class="widthP80 flexCenter marginAuto">
-  <div class="container flexCenter">
-    <div class="deckOrWord">
-      <div class="deckOrWordTitle flexCenter">
-        Word is currently categorized as:
-      </div>
-      <div class="deckOrWordOptions flexRow justifyBetween">
-        <div class="word flexCenter hoverOption">Mastered</div>
-        <div class="word flexCenter hoverOption">Proficient</div>
-        <div class="word flexCenter hoverOption">Familiar</div>
-        <div class="word flexCenter hoverOption">Unfamiliar</div>
-        <div class="word flexCenter hoverOption">Clueless</div>
+<% 
+  let mastered = "", proficient = "", familiar = "", unfamiliar = "", clueless = "";
+  switch (word.familiarity) {
+    case 1: clueless = "yellow";
+    break;
+    case 2: unfamiliar = "yellow";
+    break;
+    case 3: familiar = "yellow";
+    break;
+    case 4: proficient = "yellow";
+    break;
+    case 5: mastered = "yellow";
+    break;
+    default: clueless = "yellow";
+  }
+%>
+
+  <div class="widthP80 flexCenter marginAuto">
+    <div class="container flexCenter">
+      <div class="deckOrWord">
+        <div class="deckOrWordTitle flexCenter">
+          Word is currently categorized as:
+        </div>
+        <div class="deckOrWordOptions flexRow justifyBetween">
+          <div class="word flexCenter <%=mastered;%>">Mastered</div>
+          <div class="word flexCenter <%=proficient;%>">Proficient</div>
+          <div class="word flexCenter <%=familiar;%>">Familiar</div>
+          <div class="word flexCenter <%=unfamiliar;%>">Unfamiliar</div>
+          <div class="word flexCenter <%=clueless;%>">Clueless</div>
+        </div>
       </div>
     </div>
   </div>
-</div>

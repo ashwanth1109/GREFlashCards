@@ -1,0 +1,66 @@
+<div class="fullWidth flexCenter yellow">
+  <div class="container">
+    <div class="height20 white"></div>
+    <div class="height60 fSize2 fWeight500 white flexCenter">
+      Your list of words:
+    </div>
+    <%
+      for (let i = 0; i < words.length; i+=4) {
+        %>
+      <div class="fullWidth white height60 dflex flexRow">
+        <div class="width150 white flex1"></div>
+        <div wordId="<%=i;%>" class="width150 fSize13 fWeight500 <%
+          if (words[i]) {
+            %>yellow indexButton<%
+          }
+        %> flex2 flexCenter">
+          <% if (words[i]) {
+            %>
+            <%=words[i].name;%>
+              <%
+          } %>
+        </div>
+        <div class="width150 white flex1"></div>
+        <div wordId="<%=i+1;%>" class="width150 fSize13 fWeight500 <%
+          if (words[i+1]) {
+            %>yellow indexButton<%
+          }
+        %> flex2 flexCenter">
+          <% if (words[i+1]) {
+            %>
+            <%=words[i+1].name;%>
+              <%
+          } %>
+        </div>
+        <div class="width150 white flex1"></div>
+        <div wordId="<%=i+2;%>" class="width150 fSize13 fWeight500 <%
+          if (words[i+2]) {
+            %>yellow indexButton<%
+          }
+        %> flex2 flexCenter">
+          <% if (words[i+2]) {
+            %>
+            <%=words[i+2].name;%>
+              <%
+          } %>
+        </div>
+        <div class="width150 white flex1"></div>
+        <div wordId="<%=i+3;%>" class="width150 fSize13 fWeight500 <%
+            if (words[i+3]) {
+              %>yellow indexButton<%
+            }
+          %> flex2 flexCenter">
+          <% if (words[i+3]) {
+              %>
+            <%=words[i+3].name;%>
+              <%
+            } %>
+        </div>
+        <div class="width150 white flex1"></div>
+      </div>
+      <div class="fullWidth white height60"></div>
+      <%
+      }
+    %>
+  </div>
+</div>

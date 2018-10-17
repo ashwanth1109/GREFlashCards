@@ -123,6 +123,12 @@ a {
   display: flex;
 }
 
+.flex1 {
+  flex: 1;
+}
+.flex2 {
+  flex: 2;
+}
 .flexColumn {
   display: flex;
   flex-direction: column;
@@ -193,6 +199,18 @@ a {
 .width200 {
   width: 200;
 }
+
+.width150 {
+  width: 150;
+}
+
+.height40 {
+  height: 40;
+}
+
+.height200 {
+  height: 200px;
+}
 .height100 {
   height: 100px;
 }
@@ -234,6 +252,10 @@ a {
 
 .fSize1 {
   font-size: 1rem;
+}
+
+.fSize13 {
+  font-size: 1.3rem;
 }
 
 .fSize15 {

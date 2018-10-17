@@ -78,5 +78,12 @@ $(() => {
     }
   }
 
+  $(".indexButton").addClass("hoverButton");
+  $(".indexButton").on("click", () => {
+    const wordId = $(event.target).attr("wordId");
+    console.log(`Word Id is ${wordId}`);
+    window.location.href("../../easy/0");
+  });
+
   // if (nextId > )
 });

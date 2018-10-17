@@ -13,22 +13,23 @@
     id = id || -1;
   %>
       <div class="fullWidth vSpacerM"></div>
-      <div class="fullWidth vSpacerM"></div>
-      <% include ./partials/wordCategorizer %>
+      <% include ./partials/deckSection %>
         <div class="fullWidth vSpacerM"></div>
-        <% include ./partials/wordSection %>
+        <% include ./partials/wordCategorizer %>
           <div class="fullWidth vSpacerM"></div>
-          <% include ./partials/wordNotes %>
+          <% include ./partials/wordSection %>
             <div class="fullWidth vSpacerM"></div>
-            <% include ./partials/modeOptions %>
-              <% include ./partials/sessionTracker %>
-                <% include ./partials/startSession %>
-                  <div class="fullWidth vSpacerM"></div>
-                  <% include ./partials/progressTracker %>
+            <% include ./partials/wordNotes %>
+              <div class="fullWidth vSpacerM"></div>
+              <% include ./partials/modeOptions %>
+                <% include ./partials/sessionTracker %>
+                  <% include ./partials/startSession %>
                     <div class="fullWidth vSpacerM"></div>
-                    <% include ./partials/infoText %>
+                    <% include ./partials/progressTracker %>
                       <div class="fullWidth vSpacerM"></div>
-                      <% include ../partials/footer %>
+                      <% include ./partials/infoText %>
+                        <div class="fullWidth vSpacerM"></div>
+                        <% include ../partials/footer %>
 </body>
 
 </html>
