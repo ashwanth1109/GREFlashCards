@@ -6,6 +6,39 @@ const deck1 = require("../data/deck1");
 const { User, Word } = require("../models/users");
 
 //------------------------------------------------------------------------------------
+// I GOT THIS WORD DOWN ROUTE
+//------------------------------------------------------------------------------------
+dashboard.get("/changeFamiliarity/:id/:urlId", (req, res) => {
+  const { id } = req.params;
+  const { urlId } = req.params;
+  Word.findById({ _id: id }, (err, word) => {
+    if (err) {
+      console.log(`Error: ${err}`);
+      res.send(err);
+    } else {
+      if (word.familiarity !== 5) {
+        word.familiarity++;
+        Word.findByIdAndUpdate(
+          { _id: word.id },
+          { familiarity: word.familiarity },
+          (err, updatedWord) => {
+            if (err) {
+              console.log(`Error: err`);
+              res.send(err);
+            } else {
+              console.log(`Updated Word is ${updatedWord}`);
+              res.redirect(`/dashboard/easy/${urlId}`);
+            }
+          }
+        );
+      } else {
+        res.redirect(`/dashboard/easy/${urlId}`);
+      }
+    }
+  });
+});
+
+//------------------------------------------------------------------------------------
 // EMPTY HOME PAGE ROUTE
 //------------------------------------------------------------------------------------
 dashboard.get("/", (req, res) => {

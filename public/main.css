@@ -92,6 +92,10 @@ a {
   cursor: pointer;
 }
 
+.hoverTextWhite:hover {
+  color: var(--white);
+}
+
 /*
   DISPLAY
 */
@@ -271,6 +275,9 @@ a {
   text-align: center;
 }
 
+.inheritColor {
+  color: inherit;
+}
 /*
   ====================== COMPONENT CLASSES ====================== 
 */

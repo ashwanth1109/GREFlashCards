@@ -27,8 +27,8 @@
             var disabled=""
           }
         %>
-          <div class="widthP80 height60 yellow hoverButton flexCenter fWeight500 <%=disabled;%>" id="gotWordDown">
-            I GOT THIS WORD DOWN
+          <div class="widthP80 height60 yellow hoverButton flexCenter fWeight500<%=disabled;%>" id="gotWordDown">
+            <a href="/dashboard/changeFamiliarity/<%=word.id;%>/<%=id;%>" class="inheritColor">I GOT THIS WORD DOWN</a>
           </div>
           <div class="widthP80 height60 flexRow justifyBetween">
             <div class="widthP40 fullHeight yellow hoverButton flexCenter fWeight500 <%=disabled;%> previous">
