@@ -71,10 +71,23 @@ $(() => {
 
   const disabledButtons = $(".disabled");
   for (const disabledButton of disabledButtons) {
+    console.log(
+      $(disabledButton).hasClass("gotWordDown") &&
+        $(disabledButton).hasClass("delete")
+    );
     if ($(disabledButton).hasClass("delete")) {
       console.log(`detecting disabled delete button`);
       console.log($(".delete"));
       $(".delete").attr("disabled", "disabled");
+    }
+    if ($(disabledButton).hasClass("gotWordDown")) {
+      console.log(`entering got word downs if statement`);
+      console.log($(disabledButton).children());
+      $(disabledButton)
+        .children()
+        .click(function(e) {
+          e.preventDefault();
+        });
     }
   }
 

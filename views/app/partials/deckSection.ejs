@@ -14,11 +14,13 @@
             %>yellow indexButton<%
           }
         %> flex2 flexCenter">
-          <% if (words[i]) {
-            %>
-            <%=words[i].name;%>
-              <%
-          } %>
+          <a href="/dashboard/easy/<%=i;%>" class="inheritColor flex1 flexCenter">
+            <% if (words[i]) {
+                %>
+              <%=words[i].name;%>
+                <%
+              } %>
+          </a>
         </div>
         <div class="width150 white flex1"></div>
         <div wordId="<%=i+1;%>" class="width150 fSize13 fWeight500 <%
@@ -26,11 +28,13 @@
             %>yellow indexButton<%
           }
         %> flex2 flexCenter">
-          <% if (words[i+1]) {
-            %>
-            <%=words[i+1].name;%>
-              <%
-          } %>
+          <a href="/dashboard/easy/<%=i+1;%>" class="inheritColor flex1 flexCenter">
+            <% if (words[i+1]) {
+              %>
+              <%=words[i+1].name;%>
+                <%
+            } %>
+          </a>
         </div>
         <div class="width150 white flex1"></div>
         <div wordId="<%=i+2;%>" class="width150 fSize13 fWeight500 <%
@@ -38,11 +42,13 @@
             %>yellow indexButton<%
           }
         %> flex2 flexCenter">
-          <% if (words[i+2]) {
-            %>
-            <%=words[i+2].name;%>
-              <%
-          } %>
+          <a href="/dashboard/easy/<%=i+2;%>" class="inheritColor flex1 flexCenter">
+            <% if (words[i+2]) {
+              %>
+              <%=words[i+2].name;%>
+                <%
+            } %>
+          </a>
         </div>
         <div class="width150 white flex1"></div>
         <div wordId="<%=i+3;%>" class="width150 fSize13 fWeight500 <%
@@ -50,11 +56,13 @@
               %>yellow indexButton<%
             }
           %> flex2 flexCenter">
-          <% if (words[i+3]) {
-              %>
-            <%=words[i+3].name;%>
-              <%
-            } %>
+          <a href="/dashboard/easy/<%=i+3;%>" class="inheritColor flex1 flexCenter">
+            <% if (words[i+3]) {
+                %>
+              <%=words[i+3].name;%>
+                <%
+              } %>
+          </a>
         </div>
         <div class="width150 white flex1"></div>
       </div>
