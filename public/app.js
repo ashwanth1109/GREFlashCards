@@ -1,10 +1,13 @@
 $(() => {
-  console.log($);
-
-  let difficulty = "";
-
+  //------------------------------------------------------------------------------------
+  // CARD FLIP ANIMATION EXPORTED IN THROUGH EXTERNAL LIBRARY
+  //------------------------------------------------------------------------------------
   $(".card").flip({ axis: "x" });
 
+  //------------------------------------------------------------------------------------
+  // NEED TO FIGURE OUT WHAT I WROTE THIS FOR
+  //------------------------------------------------------------------------------------
+  let difficulty = "";
   $(`.difficulty`).on("click", e => {
     if ($(e.target).hasClass("yellow")) {
       $(e.target).removeClass("yellow");

@@ -1,5 +1,6 @@
 //------------------------------------------------------------------------------------
 // SET DEPENDENCIES FOR BASIC SERVER
+// EXPRESS, METHOD OVERRIDE, MONGOOSE, DOTENV, SESSION, MORGAN
 //------------------------------------------------------------------------------------
 const express = require("express");
 const methodOverride = require("method-override");
@@ -24,19 +25,20 @@ app.use(methodOverride("_method"));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static("public"));
 app.use(morgan("combined"));
+
 //------------------------------------------------------------------------------------
 // SESSION MIDDLEWARE
 //------------------------------------------------------------------------------------
 app.use(
   session({
-    secret: process.env.SECRET || `helloworld`,
+    secret: process.env.SECRET,
     resave: false,
     saveUninitialized: false
   })
 );
 
 //------------------------------------------------------------------------------------
-// SET ROUTES
+// ROUTES
 //------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------
 // GET ROUTE: HOMEPAGE
@@ -67,12 +69,6 @@ const dashboardController = require("./controllers/dashboard.js");
 app.use("/dashboard", dashboardController);
 
 //------------------------------------------------------------------------------------
-// DECK ROUTE CONTROLLER
-//------------------------------------------------------------------------------------
-const deckController = require("./controllers/deck.js");
-app.use("/deck", deckController);
-
-//------------------------------------------------------------------------------------
 // CONFIGURE DATABASE AND DATABASE CONNECTION
 //------------------------------------------------------------------------------------
 mongoose.connect(
@@ -89,3 +85,168 @@ db.once("open", () => {
 app.listen(PORT, () => {
   console.log(`app is listening on port ${PORT}`);
 });
+
+//------------------------------------------------------------------------------------
+//
+//------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------
+// CODE GRAVEYARD
+//------------------------------------------------------------------------------------
+
+// //------------------------------------------------------------------------------------
+// // DECK ROUTE CONTROLLER
+// //------------------------------------------------------------------------------------
+// const deckController = require("./controllers/deck.js");
+// app.use("/deck", deckController);
+
+// //------------------------------------------------------------------------------------
+// // SET DEPENDENCIES
+// //------------------------------------------------------------------------------------
+// const express = require("express");
+// const deck = express.Router();
+// const mongoose = require("mongoose");
+
+// //------------------------------------------------------------------------------------
+// // GET SEED DATA
+// //------------------------------------------------------------------------------------
+// // const seed = require("../models/seed");
+
+// //------------------------------------------------------------------------------------
+// // IMPORT MODELS WORD AND USER
+// //------------------------------------------------------------------------------------
+// const { Word, User } = require("../models/users");
+
+// //------------------------------------------------------------------------------------
+// // SEED ROUTE
+// //------------------------------------------------------------------------------------
+// // deck.get("/seed", (req, res) => {
+// //   Word.create(seed, (err, data) => {
+// //     if (err) {
+// //       res.send(err);
+// //     } else {
+// //       res.redirect("/dashboard");
+// //     }
+// //   });
+// // });
+
+// //------------------------------------------------------------------------------------
+// // NEW ROUTE
+// //------------------------------------------------------------------------------------
+// deck.get("/new", (req, res) => {
+//   if (req.session.user) {
+//     res.render("app/new.ejs", {
+//       user: req.session.user
+//     });
+//   } else {
+//     res.redirect("/");
+//   }
+// });
+
+// //------------------------------------------------------------------------------------
+// // CREATE ROUTE
+// //------------------------------------------------------------------------------------
+// deck.post("/", (req, res) => {
+//   const { body } = req;
+//   const { _id } = req.session.user;
+//   console.log(_id);
+//   let difficulty;
+//   switch (body.difficulty) {
+//     case "Easy":
+//       difficulty = 1;
+//       break;
+//     case "Medium":
+//       difficulty = 2;
+//       break;
+//     case "Hard":
+//       difficulty = 3;
+//       break;
+//     default:
+//       difficulty = 3;
+//   }
+//   const homeWordId = req.session.user.easyWords[0];
+//   console.log(`home word id is:`);
+//   console.log(homeWordId);
+//   // body.userId = _id;
+//   console.log(`The word looks like this`);
+//   console.log(body);
+
+//   const word = new Word({
+//     userId: _id,
+//     name: body.name,
+//     definition: body.definition,
+//     notes: body.notes,
+//     difficulty: difficulty,
+//     familiarity: 1
+//   });
+
+//   word.save((err, word) => {
+//     if (err) {
+//       console.log(err);
+//     }
+//     if (word.difficulty === 1) {
+//       User.findByIdAndUpdate(
+//         { _id: _id },
+//         { $push: { easyWords: word } },
+//         { new: true },
+//         (err, updatedUser) => {
+//           if (err) {
+//             res.send(err);
+//           } else {
+//             console.log(updatedUser);
+//             res.redirect(`/dashboard/easy/0`);
+//           }
+//         }
+//       );
+//     }
+//   });
+//   // User.findById
+//   // Word.create(body, (err, word) => {
+//   //   if (err) {
+//   //     console.log(err);
+//   //   } else {
+//   //     console.log(word);
+//   //     res.redirect("/dashboard/easy/0");
+//   //   }
+//   // });
+
+//   // const words = [];
+//   // words.push(word);
+//   // User.findById(req.session.user._id, (err, user) => {
+//   //   if (err) {
+//   //     res.send(err);
+//   //   } else {
+//   //     user[difficulty].push(word);
+//   //     User.findByIdAndUpdate(
+//   //       req.session.user._id,
+//   //       user,
+//   //       { new: true },
+//   //       (err, updatedUser) => {
+//   //         if (err) {
+//   //           res.send(err);
+//   //         } else {
+//   //           console.log(updatedUser);
+//   //           res.redirect("/dashboard/easy/0");
+//   //         }
+//   //       }
+//   //     );
+//   //   }
+//   // });
+//   // User.findByIdAndUpdate(
+//   //   req.session.user._id,
+//   //   { words: words },
+//   //   { new: true },
+//   //   (err, updatedUser) => {
+//   //     if (err) {
+//   //       res.send(err);
+//   //     } else {
+//   //       console.log(updatedUser);
+//   //       res.redirect("/dashboard");
+//   //     }
+//   //   }
+//   // );
+// });
+
+// //------------------------------------------------------------------------------------
+// // EXPORT
+// //------------------------------------------------------------------------------------
+// module.exports = deck;

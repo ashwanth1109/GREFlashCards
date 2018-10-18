@@ -1,9 +1,18 @@
+//------------------------------------------------------------------------------------
+// SET DEPENDENCIES
+//------------------------------------------------------------------------------------
 const express = require("express");
 const dashboard = express.Router();
 
-const deck1 = require("../data/deck1");
-// Get word model
+//------------------------------------------------------------------------------------
+// GET USER AND WORD MODEL
+//------------------------------------------------------------------------------------
 const { User, Word } = require("../models/users");
+
+//------------------------------------------------------------------------------------
+// GET SEED DATA
+//------------------------------------------------------------------------------------
+// const seed = require("../models/seed");
 
 //------------------------------------------------------------------------------------
 // I GOT THIS WORD DOWN ROUTE
@@ -61,10 +70,7 @@ dashboard.get("/", (req, res) => {
 // INDEX + SHOW ROUTE
 //------------------------------------------------------------------------------------
 dashboard.get("/easy/:id", (req, res) => {
-  // console.log(`entering dashboard 0 element get req`);
   const { id } = req.params;
-  // console.log(`logging user`);
-  // console.log(user);
   const { user } = req.session;
 
   if (user) {
@@ -77,10 +83,7 @@ dashboard.get("/easy/:id", (req, res) => {
           console.log(words);
           console.log(`========================================`);
           Word.findById({ _id: user.easyWords[id] }, (err, word) => {
-            // console.log(`logging word`);
-            // console.log(word);
             if (err) {
-              // console.log("error");
               res.send(err);
             } else {
               res.render("app/dashboard.ejs", {
@@ -92,20 +95,78 @@ dashboard.get("/easy/:id", (req, res) => {
               });
             }
           });
-          // User;
-          // res.render("app/dashboard.ejs", {
-          //   user: user,
-          //   id: id,
-          //   words: user.easyWords,
-          //   word: user.easyWords[id]
-          // });
-          // // res.send("hello");
         }
       });
     });
   } else {
     res.redirect("/");
   }
+});
+
+//------------------------------------------------------------------------------------
+// NEW ROUTE
+//------------------------------------------------------------------------------------
+dashboard.get("/new", (req, res) => {
+  if (req.session.user) {
+    res.render("app/new.ejs", {
+      user: req.session.user
+    });
+  } else {
+    res.redirect("/");
+  }
+});
+
+//------------------------------------------------------------------------------------
+// CREATE ROUTE
+//------------------------------------------------------------------------------------
+dashboard.post("/", (req, res) => {
+  const { body } = req;
+  const { _id } = req.session.user;
+  let difficulty;
+  switch (body.difficulty) {
+    case "Easy":
+      difficulty = 1;
+      break;
+    case "Medium":
+      difficulty = 2;
+      break;
+    case "Hard":
+      difficulty = 3;
+      break;
+    default:
+      difficulty = 3;
+  }
+  const homeWordId = req.session.user.easyWords[0];
+
+  const word = new Word({
+    userId: _id,
+    name: body.name,
+    definition: body.definition,
+    notes: body.notes,
+    difficulty: difficulty,
+    familiarity: 1
+  });
+
+  word.save((err, word) => {
+    if (err) {
+      console.log(err);
+    }
+    if (word.difficulty === 1) {
+      User.findByIdAndUpdate(
+        { _id: _id },
+        { $push: { easyWords: word } },
+        { new: true },
+        (err, updatedUser) => {
+          if (err) {
+            res.send(err);
+          } else {
+            console.log(updatedUser);
+            res.redirect(`/dashboard/easy/0`);
+          }
+        }
+      );
+    }
+  });
 });
 
 //------------------------------------------------------------------------------------
@@ -141,7 +202,6 @@ dashboard.delete("/easy/:id", (req, res) => {
               }
             }
           );
-          // res.redirect("/dashboard/easy/0");
         }
       });
     });
@@ -243,3 +303,77 @@ dashboard.put("/:id", (req, res) => {
 });
 
 module.exports = dashboard;
+
+//------------------------------------------------------------------------------------
+// CODE GRAVEYARD
+//------------------------------------------------------------------------------------
+
+//------------------------------------------------------------------------------------
+// SEED ROUTE
+//------------------------------------------------------------------------------------
+// deck.get("/seed", (req, res) => {
+//   Word.create(seed, (err, data) => {
+//     if (err) {
+//       res.send(err);
+//     } else {
+//       res.redirect("/dashboard");
+//     }
+//   });
+// });
+
+//------------------------------------------------------------------------------------
+// CREATE ROUTE
+//------------------------------------------------------------------------------------
+// User.findById
+// Word.create(body, (err, word) => {
+//   if (err) {
+//     console.log(err);
+//   } else {
+//     console.log(word);
+//     res.redirect("/dashboard/easy/0");
+//   }
+// });
+
+// const words = [];
+// words.push(word);
+// User.findById(req.session.user._id, (err, user) => {
+//   if (err) {
+//     res.send(err);
+//   } else {
+//     user[difficulty].push(word);
+//     User.findByIdAndUpdate(
+//       req.session.user._id,
+//       user,
+//       { new: true },
+//       (err, updatedUser) => {
+//         if (err) {
+//           res.send(err);
+//         } else {
+//           console.log(updatedUser);
+//           res.redirect("/dashboard/easy/0");
+//         }
+//       }
+//     );
+//   }
+// });
+// User.findByIdAndUpdate(
+//   req.session.user._id,
+//   { words: words },
+//   { new: true },
+//   (err, updatedUser) => {
+//     if (err) {
+//       res.send(err);
+//     } else {
+//       console.log(updatedUser);
+//       res.redirect("/dashboard");
+//     }
+//   }
+// );
+// User;
+// res.render("app/dashboard.ejs", {
+//   user: user,
+//   id: id,
+//   words: user.easyWords,
+//   word: user.easyWords[id]
+// });
+// // res.send("hello");
