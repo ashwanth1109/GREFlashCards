@@ -31,7 +31,7 @@ app.use(morgan("combined"));
 //------------------------------------------------------------------------------------
 app.use(
   session({
-    secret: process.env.SECRET,
+    secret: process.env.SECRET || "helloworld",
     resave: false,
     saveUninitialized: false
   })
