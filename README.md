@@ -11,7 +11,7 @@ Sample Login 2 (Contains set of 50 words from my practice set for GRE prep)
 Login: common5@gre.com
 Password: 123
 
-Note: When adding words using the 'Add word' form, you can only select easy categorization since routes currently only handle easy words for the user.
+*Note*: When adding words using the 'Add word' form, you can only select easy categorization since routes currently only handle easy words for the user.
 
 ## Wireframes & Design
 
